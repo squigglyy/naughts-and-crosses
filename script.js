@@ -1,32 +1,23 @@
 const NAUGHT = 'naught'
 const CROSS = 'x'
 let conditon 
-const cellElements = document.querySelectorAll('[data-tile]')
-
-
+const cellElements = document.querySelectorAll('.tile');
 cellElements.forEach(tile => {  
-    tile.addEventListener('click', clickControls, { once: true })
+    tile.addEventListener('click', clickController, { once: true })
 })
 
 
-
-
-function clickControls(expected) {
+function clickController(expected) {
     const tile = expected.target
     const currentP = conditon ? NAUGHT : CROSS
-    
    
     placeTile(tile, currentP)
-
-    //check for win
-    //check for draw
-    //switch turns
+    
+    conditon ^= true;
     
 }
 
 function placeTile(tile, currentP) {
-    console.log("a")
-    
-    tile.classlist.add(currentP)
+     tile.className += currentP;
     
 }
