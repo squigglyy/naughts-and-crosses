@@ -1,23 +1,42 @@
-const NAUGHT = 'naught'
-const CROSS = 'x'
-let conditon 
-const cellElements = document.querySelectorAll('.tile');
-cellElements.forEach(tile => {  
-    tile.addEventListener('click', clickController, { once: true })
+const marker = 'x'
+
+const pixels = document.querySelectorAll('.tile');
+pixels.forEach(tile => {  
+    tile.addEventListener('click', click, { once: true })
 })
 
 
-function clickController(expected) {
+function click(expected) {
     const tile = expected.target
-    const currentP = conditon ? NAUGHT : CROSS
-   
-    placeTile(tile, currentP)
     
-    conditon ^= true;
+   
+    placeTile(tile, marker)
+    binaryCal()
+    
     
 }
 
-function placeTile(tile, currentP) {
-     tile.className += currentP;
+function placeTile(tile, marker) {
     
+    tile.className += marker;
+    
+}
+
+
+
+function binaryCal() {
+    let stringB = "B";
+    const board = document.getElementById("board").children;
+    for (let i = 0; i < 64; i++) {
+        console.log("1")
+        console.log(board.children[1].className)
+
+        
+        
+        
+    }
+    
+    let data = document.getElementById("output");
+    data.innerHTML = "";
+    data.innerHTML += stringB;
 }

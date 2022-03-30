@@ -5,113 +5,35 @@
 
 }
 
-:root {
-    --tile-size: 100px;
-    --box-size: 300px;
-    
-}
 
 
 
 .board {
-    width: var(--box-size);
-    height: var(--box-size);
+    width: 400px;
+    height: 400px;
     display: grid;
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -150px;
-    margin-left: -150px;
+    margin-top: -200px;
+    margin-left: -200px;
     align-content: center;
     justify-content: center;
     justify-items: center;
     align-items: center;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(8, auto);
     
 }
 
 
 .tile {
-    width: var(--tile-size);
-    height: var(--tile-size);
-    border: 1px solid black;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-}
-
-.tile.x,
-.tile.naught {
-    cursor: not-allowed;
-}
-
-.tile:first-child,
-.tile:nth-child(2), 
-.tile:nth-child(3) {
-    border-top: none;
-}
-
-
-.tile:first-child,
-.tile:nth-child(4), 
-.tile:nth-child(7) {
-    border-left: none;
-}
-
-.tile:nth-child(3),
-.tile:nth-child(6), 
-.tile:nth-child(9) {
-    border-right: none;
-}
-
-.tile:nth-child(7),
-.tile:nth-child(8), 
-.tile:nth-child(9) {
-    border-bottom: none;
-}
-
-
-.tile.x::before,
-.tile.x::after {
-    content: '';
-    width: 8px;
-    height: 80px;
-    background-color: black;
-    position: absolute;
-}
-
-.tile.x::before {
-    transform: rotate(45deg);
-}
-
-.tile.x::after {
-    transform: rotate(-45deg);
-}
-
-    
-
-.tile.naught::before,
-.tile.naught::after {
-    content: '';
-    position: absolute;
-    
-}
-
-
-
-.tile.naught::before {
-    width: 80px;
-    height: 80px;
-    background-color: black;
-    border-radius: 50%;
-}
-
-.tile.naught:after {
-    width: 65px;
-    height: 65px;
-    background-color: white;
-    border-radius: 50%;
 }
 
 
